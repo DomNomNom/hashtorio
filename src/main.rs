@@ -1,5 +1,11 @@
 // use std::time;
+use std::thread;
 
+type App = live_reload::Reloadable<HostApi>;
+
+fn print(msg: &str) {
+    print!("{}", msg);
+}
 use ggez::graphics::DrawParam;
 use ggez::*;
 
