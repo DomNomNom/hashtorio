@@ -19,14 +19,7 @@ impl ggez::event::EventHandler for State {
     }
 
     fn draw(&mut self, ctx: &mut Context) -> GameResult {
-        // println!("Hello ggez! dt = {}ms", self.dt.as_millis());
         graphics::clear(ctx, graphics::BLACK);
-        // let t = graphics::Text::new(graphics::TextFragment::from(format!(
-        //     "Hello ggez! dt = {}ms",
-        //     self.dt.as_millis()
-        // )));
-        // let dp = DrawParam::default(); //.color(graphics::BLACK);
-        // graphics::draw(ctx, &t, dp)?;
         self.t.fragments_mut()[0].text = format!(
             "Hello ggez! {}Hz",
             1.0 / (1e-9 * (self.dt.as_nanos() as f64))
